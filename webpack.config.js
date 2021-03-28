@@ -14,7 +14,10 @@ module.exports = {
     // Informa que o webpack pode ler esses 2 tipos de arquivo ↓
     extensions: ['.js', '.jsx']
   },
-  // Informa como a aplicação vai se comportar diante da importação de cada tipo de arquivo ↓
+  /**
+   * Informa como a aplicação vai se comportar diante da 
+   * importação de cada tipo de arquivo ↓
+   */
   module: {
     rules: [
       {
