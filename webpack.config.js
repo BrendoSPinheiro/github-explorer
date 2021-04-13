@@ -9,7 +9,7 @@ module.exports = {
   mode: isDevelopment ? 'development' : 'production',
   devtool: isDevelopment ? 'eval-source-map' : 'source-map',
   // Diz qual o arquivo inicial da aplicação ↓
-  entry: path.resolve(__dirname, 'src', 'index.jsx'),
+  entry: path.resolve(__dirname, 'src', 'index.tsx'),
   // Diz qual arquivo que vai ser gerado com webpack ↓
   output: {
     // Pasta onde o arquivo será gerado ↓
@@ -18,8 +18,8 @@ module.exports = {
     filename: 'bundle.js'
   },
   resolve: {
-    // Informa que o webpack pode ler esses 2 tipos de arquivo ↓
-    extensions: ['.js', '.jsx']
+    // Informa que o webpack pode ler esses 4 tipos de arquivo ↓
+    extensions: ['.js', '.jsx', '.ts', '.tsx']
   },
   devServer: {
     contentBase: path.resolve(__dirname, 'public'),
@@ -38,7 +38,7 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.jsx$/,
+        test: /\.(j|t)sx$/,
         exclude: /node_modules/,
         use: {
           loader: 'babel-loader',
