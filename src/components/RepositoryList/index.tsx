@@ -4,8 +4,15 @@ import { RepositoryItem } from "./components/RepositoryItem";
 
 import '../../styles/repositories.scss';
 
+interface IRepository {
+  id: string;
+  name: string;
+  description: string;
+  html_url: string;
+}
+
 export const RepositoryList = () => {
-  const [repos, setRepos] = useState([]);
+  const [repos, setRepos] = useState<IRepository[]>([]);
 
   useEffect(() => {
     fetch('https://api.github.com/users/BrendoSPinheiro/repos')
